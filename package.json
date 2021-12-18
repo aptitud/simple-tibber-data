@@ -1,0 +1,27 @@
+{
+  "name": "tibber-export",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "engines": { "node": "14.16.0" },
+  "scripts": {
+    "test": "echo \"this is only integration\" && exit 0",
+    "compile": "tsc -w",
+    "postinstall":"tsc",
+    "dev": "nodemon build/tibber.js",
+    "start" : "node build/tibber.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.21.0",
+    "tibber-api": "^3.0.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "tsc-watch": "^4.5.0"
+  }
+}
