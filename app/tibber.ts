@@ -3,7 +3,6 @@ const influxWriter = require('./influx')
 const { tibber } = require('./config')
 
 // Config object needed when instantiating TibberQuery
-console.log(tibber);
 const config: typeof IConfig = {
     // Endpoint configuration.
     active:true,
@@ -36,15 +35,15 @@ tibberFeed.on('data', data => {
 });
 
 tibberFeed.on('error', error => {
-    console.log(error);
+    console.log(`TibberFeed Error : ${error}`);
 });
 
 tibberFeed.on('log', message => {
-    console.log('log -> ', message);
+    console.log(`log -> : ${message}`);
 })
 
 tibberFeed.on('disconnected', message => {
-    console.log(message);
+    console.log(`Disconnected from Tibber Feed : ${message}`);
     process.exit(-1);
 })
 
