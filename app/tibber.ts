@@ -35,7 +35,7 @@ tibberFeed.on('data', data => {
 });
 
 tibberFeed.on('error', error => {
-    console.log(`TibberFeed Error : ${error}`);
+    console.log(`TibberFeed Error -> : ${error}`);
 });
 
 tibberFeed.on('log', message => {
@@ -43,12 +43,11 @@ tibberFeed.on('log', message => {
 })
 
 tibberFeed.on('disconnected', message => {
-    console.log(`Disconnected from Tibber Feed : ${message}`);
+    console.log(`Disconnected event received : ${message}`);
     process.exit(-1);
 })
 
 // Connect to Tibber data feed
-tibberFeed.close();
 tibberFeed.connect();
 
 const closeFeed = () => {
